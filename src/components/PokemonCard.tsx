@@ -24,7 +24,7 @@ const PokemonCard: FunctionComponent<PokemonCardProps> = ({pokemon}) => {
             <img src={imageUrl}/>
 
             <button className="button-toggle-shiny" onClick={() => setIsShiny(!isShiny)}>
-                <input type="checkbox" checked={isShiny}/>
+                <input type="checkbox" checked={isShiny} readOnly/>
                 Shiny
             </button>
 
@@ -41,7 +41,7 @@ const PokemonCard: FunctionComponent<PokemonCardProps> = ({pokemon}) => {
                     </button>
                 </li>
                 <li>
-                    <button onClick={() =>  new Audio(pokemon.cries.latest).play()}>
+                    <button onClick={() => new Audio(pokemon.cries.latest).play()}>
                         Latest cry
                     </button>
                 </li>

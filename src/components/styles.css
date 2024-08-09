@@ -1,3 +1,7 @@
+.pokemon-filter {
+  margin: 20px;
+}
+
 .pokemon-list {
   display: flex;
   flex-wrap: wrap;
