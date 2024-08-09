@@ -23,7 +23,6 @@ const PokemonCard: FunctionComponent<PokemonCardProps> = ({pokemon}) => {
             <span className="pokemon-card-name">{pokemon.name}</span>
             <img src={imageUrl}/>
 
-            {/*<!-- Add a button to toggle the shiny state -->*/}
             <button className="button-toggle-shiny" onClick={() => setIsShiny(!isShiny)}>
                 <input type="checkbox" checked={isShiny}/>
                 Shiny
@@ -33,6 +32,19 @@ const PokemonCard: FunctionComponent<PokemonCardProps> = ({pokemon}) => {
                 {pokemon.types.map((type, index) => (
                     pokeLabel(type)
                 ))}
+            </ul>
+
+            <ul className="pokemon-card-types">
+                <li>
+                    <button onClick={() => new Audio(pokemon.cries.legacy).play()}>
+                        legacy cry
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() =>  new Audio(pokemon.cries.latest).play()}>
+                        Latest cry
+                    </button>
+                </li>
             </ul>
         </li>
     )
